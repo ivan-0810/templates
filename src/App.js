@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Style from 'style-it';
+import Card from './components/Card';
+import "./Box.scss";
 
-function App() {
+const  App = () => {
+const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() =>{
+      setIsReady(true);
+    },500)
+
+    return () => {
+      clearTimeout(timeout);
+   }
+
+  }, [isReady])
+
+ 
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {!isReady &&  <Style>
+        { 
+          `.box:before {
+            opacity:1;
+          } `
+        }    
+        </Style> 
+      }
+        <div className="box" >
+        <Card isReady={isReady}/>
+      </div>
+      
+ 
     </div>
   );
 }

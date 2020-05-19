@@ -1,0 +1,140 @@
+.card {
+  width: 370px;
+  height: fit-content;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column; 
+  transition: opacity 0.25s ease-in-out 0.125s, top 1.5s,
+  transform 0.25s ease-in-out 0.125s;
+  .img-div {
+    img {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+  }
+  .txt-div {
+    background-color: #ffffff;
+    text-align: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    h1 {
+      color: #586167;
+      margin-top: 40px;
+      font-size: 36px;
+      letter-spacing: 1.5px;
+    }
+    p {
+      letter-spacing: 1px;
+    }
+    h1,
+    p {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    p,
+    i {
+      color: #8697a1;
+    }
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    padding: 24px 30px 50px ;
+    border-top: 1px solid #8697a1;
+    margin-top: 25px;
+    ul {
+      list-style-type: none;
+      display: flex;
+      padding: 0;
+      li:not(:first-child) {
+        margin-left: 13px;
+      }
+    }
+
+    a {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #8697a1;
+      text-decoration: none;
+      transition: color 0.25s ease, background-color 0.25s ease,
+        border-color 0.25s ease;
+      &:hover {
+        border: 1px solid #8ed5ed;
+      }
+      &:hover i {
+        color: #8ed5ed;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .card{
+    width: 90%;
+   .txt-div{
+    h1{
+      font-size: 25px;
+      
+    }
+    p{
+      font-size: 15px
+    }
+   }
+ .social-icons a {
+     width: 25px;
+     height: 25px;
+     i{
+       font-size: 13px;
+     }
+   }
+  }
+}
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+ .card {
+ width: 370px;
+  .txt-div{
+    h1{
+      font-size: 28px;
+      
+    }
+    p{
+      font-size: 18px
+    }
+   }
+ .social-icons a {
+     width: 27px;
+     height: 27px;
+     i{
+       font-size: 15px;
+     }
+   }
+  }
+}
+@media(min-width: 1024px)  {
+  .card{
+    width: 35%;
+    .txt-div{
+      h1{
+        font-size: 32px;
+        
+      }
+      p{
+        font-size: 20px
+      }
+     }
+   .social-icons a {
+       width: 35px;
+       height: 35px;
+       i{
+         font-size: 18px;
+       }
+     }
+    }
+}
